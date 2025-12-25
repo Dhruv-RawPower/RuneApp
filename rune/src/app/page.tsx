@@ -1,5 +1,8 @@
 import CanvasWrapper from "@/components/canvas/CanvasWrapper"
 import Scene from "@/components/canvas/Scene"
+import AuthPanel from "@/components/dev/AuthPanel"
+import CreateRunePanel from "@/components/dev/CreateRunePanel"
+import WhisperTestPanel from "@/components/dev/WhisperTestPanel"
 
 export default function Home() {
   return (
@@ -7,6 +10,9 @@ export default function Home() {
       <CanvasWrapper>
         <Scene />
       </CanvasWrapper>
+      <CreateRunePanel />
+      <WhisperTestPanel />
+      <AuthPanel />
     </main>
   )
 }
