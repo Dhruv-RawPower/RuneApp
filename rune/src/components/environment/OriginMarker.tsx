@@ -1,6 +1,8 @@
 "use client"
 
-export default function OriginMarker() {
+import { memo } from "react"
+
+function OriginMarker() {
   return (
     <mesh position={[0, 0.01, 0]}>
       <sphereGeometry args={[0.15, 16, 16]} />
@@ -8,3 +10,5 @@ export default function OriginMarker() {
     </mesh>
   )
 }
+
+export default memo(OriginMarker)
