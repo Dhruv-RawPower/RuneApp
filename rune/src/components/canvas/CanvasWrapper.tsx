@@ -9,10 +9,10 @@ type Props = {
 export default function CanvasWrapper({ children }: Props) {
   return (
     <Canvas
-      shadows={false}
-      dpr={[1, 1.5]}
+      dpr={[1, 1.5]}          // 👈 HARD CAP
+      frameloop="always"
       camera={{
-        position: [0, 2, 6],
+        position: [0, 2.2, 6],
         fov: 45,
         near: 0.1,
         far: 100,
