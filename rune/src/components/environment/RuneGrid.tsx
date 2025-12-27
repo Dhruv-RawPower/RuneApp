@@ -1,8 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
-import RuneSlot from "./RuneSlot"
-import RuneText from "./RuneText"
+import { RuneSlot } from "./RuneSlot"
 import { useRuneStore } from "@/store/useRuneStore"
 
 export default function RuneGrid() {
@@ -13,20 +12,12 @@ export default function RuneGrid() {
   }, [loadRunes])
 
   return (
-    <>
+    // 👇 THIS is the missing anchor
+    <group position={[0, 0, 0.25]}>
       {runes.map((rune) => (
-        <group key={rune.id}>
-          <RuneSlot
-            position={rune.position}
-            highlighted={false}
-          />
-          <RuneText
-            position={rune.position}
-            content={rune.content}
-          />
-        </group>
+        <RuneSlot key={rune.id} rune={rune} />
       ))}
-    </>
+    </group>
+
   )
 }
-

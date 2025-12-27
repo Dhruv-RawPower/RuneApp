@@ -4,4 +4,5 @@ export type Rune = {
   position: [number, number, number]
   createdAt: string
   decayLevel: number
+  authorId: string
 }

@@ -19,18 +19,15 @@ export default function RuneText({
     const ref = useRef<any>(null)
 
     useFrame(({ clock }) => {
-        if (!highlighted || !ref.current) return
-        ref.current.position.y =
-            position[1] + Math.sin(clock.elapsedTime * 1.5) * 0.02
+    if (!highlighted || !ref.current) return
+    ref.current.position.y = Math.sin(clock.elapsedTime * 1.5) * 0.015
     })
+
 
     return (
         <Text
-            position={[
-                position[0],
-                position[1],
-                position[2] + Z_LAYERS.TEXT,
-            ]}
+            ref={ref}
+            position={[0, 0, Z_LAYERS.TEXT]}
             fontSize={highlighted ? 0.3 : 0.28}
             maxWidth={1.1}
             lineHeight={1.1}
@@ -46,6 +43,7 @@ export default function RuneText({
             <meshStandardMaterial
                 color={highlighted ? "#fff4cc" : "#e6d3a3"}
                 depthWrite={false}
+                depthTest={true}
                 transparent
             />
         </Text>
